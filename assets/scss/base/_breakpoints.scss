@@ -1,0 +1,9 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+
+@mixin down($bp) {
+  @media (max-width: ($bp - 1px)) {
+    @content;
+  }
+}

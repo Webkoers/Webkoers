@@ -1,0 +1,193 @@
+/* ======================================
+   CF7 Forms (clean + compact)
+====================================== */
+
+.wpcf7 form {
+  display: grid;
+  gap: 14px;
+}
+
+/* CF7 gebruikt vaak <p> wrappers + <br> */
+.wpcf7 form p {
+  margin: 0;
+  padding: 0;
+}
+
+.wpcf7 form br {
+  display: none;
+}
+
+.wpcf7 form .wpcf7-form-control-wrap {
+  display: block;
+}
+
+/* Labels */
+.wpcf7 form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--c-text);
+}
+
+/* Inputs / textarea / select (niet checkbox/radio/submit) */
+.wpcf7 form
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.wpcf7 form textarea,
+.wpcf7 form select {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.2;
+
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: color-mix(in srgb, #fff, transparent 35%);
+  color: var(--c-text);
+}
+
+.wpcf7 form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.wpcf7 form input::placeholder,
+.wpcf7 form textarea::placeholder {
+  color: rgba(31, 31, 31, 0.5);
+}
+
+.wpcf7 form input:focus,
+.wpcf7 form textarea:focus,
+.wpcf7 form select:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent), transparent 86%);
+}
+
+/* Select spacing */
+.wpcf7 form select {
+  padding-right: 40px;
+}
+
+/* Checkbox / radio groups */
+.wpcf7 form .wpcf7-list-item {
+  margin: 0;
+  display: block;
+}
+
+.wpcf7 form .wpcf7-list-item label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.wpcf7 form input[type="checkbox"],
+.wpcf7 form input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0 0;
+  accent-color: var(--c-accent);
+}
+
+/* Submit button */
+.wpcf7 form input[type="submit"],
+.wpcf7 form button[type="submit"] {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-base);
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  background: var(--c-accent);
+  color: var(--c-text-light);
+
+  border: 1px solid transparent;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.wpcf7 form input[type="submit"]:hover,
+.wpcf7 form button[type="submit"]:hover {
+  background: color-mix(in srgb, var(--c-accent), #000 10%);
+  transform: translateY(-1px);
+}
+
+.wpcf7 form input[type="submit"]:focus-visible,
+.wpcf7 form button[type="submit"]:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+/* Field errors */
+.wpcf7 form .wpcf7-not-valid {
+  border-color: rgba(255, 107, 107, 0.95);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.18);
+}
+
+.wpcf7 form .wpcf7-not-valid-tip {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 107, 107, 0.95);
+}
+
+/* Form-level message box */
+.wpcf7 form .wpcf7-response-output {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* Dark context (generic) */
+.section--dark,
+.is-dark {
+  color-scheme: dark;
+
+  .wpcf7 form label {
+    color: var(--c-text-light);
+  }
+
+  .wpcf7 form
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+  .wpcf7 form textarea,
+  .wpcf7 form select {
+    border-color: color-mix(in srgb, var(--c-text-light), transparent 78%);
+    background: color-mix(in srgb, var(--c-text-light), transparent 90%);
+    color: var(--c-text-light);
+  }
+
+  .wpcf7 form input::placeholder,
+  .wpcf7 form textarea::placeholder {
+    color: color-mix(in srgb, var(--c-text-light), transparent 40%);
+  }
+
+  .wpcf7 form input:focus,
+  .wpcf7 form textarea:focus,
+  .wpcf7 form select:focus {
+    border-color: color-mix(in srgb, var(--c-accent), transparent 30%);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent), transparent 78%);
+  }
+
+  .wpcf7 form .wpcf7-not-valid-tip {
+    color: color-mix(in srgb, #ff6b6b, transparent 10%);
+  }
+
+  .wpcf7 form .wpcf7-response-output {
+    border: 1px solid color-mix(in srgb, #ffc850, transparent 45%);
+    background: color-mix(in srgb, #ffc850, transparent 88%);
+    color: color-mix(in srgb, var(--c-text-light), transparent 8%);
+  }
+}

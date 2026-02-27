@@ -1,0 +1,40 @@
+/* Preloader Background */
+.preloaderBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FAF6EB;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+/* Container for the logo */
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  width: 150px;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Fade-out effect */
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}

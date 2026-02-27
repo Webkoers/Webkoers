@@ -1,0 +1,132 @@
+@use "../base/breakpoints" as bp;
+
+.b-contact__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* Desktop: form links, card rechts */
+@media (min-width: bp.$lg) {
+  .b-contact__inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+}
+
+/* Left column */
+.b-contact__kicker {
+  margin: 0 0 var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.b-contact__title {
+  margin: 0 0 var(--space-3);
+  line-height: 1.05;
+}
+
+.b-contact__intro {
+  margin: 0 0 var(--space-5);
+  max-width: 62ch;
+  opacity: 0.92;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.b-contact__form {
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, #fff, transparent 82%);
+}
+
+.b-contact__note {
+  margin: var(--space-3) 0 0;
+  font-size: 0.95rem;
+  opacity: 0.78;
+}
+
+/* Right column card */
+.b-contact__card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, #fff, transparent 86%);
+  display: grid;
+  gap: 10px;
+
+  /* belangrijk: card mag niet full-bleed images forceren */
+  width: 100%;
+}
+
+/* Image: altijd netjes passend */
+.b-contact__media {
+  margin: 0 0 var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+
+  /* zoals je voorbeeld: portrait card image */
+  aspect-ratio: 3 / 4;
+}
+
+.b-contact__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.b-contact__name {
+  margin: 0;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.b-contact__role,
+.b-contact__location {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.b-contact__links {
+  margin-top: var(--space-3);
+  display: grid;
+  gap: 10px;
+}
+
+.b-contact__link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.92;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+.b-contact__link-icon {
+  color: var(--c-accent);
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Dark context: rely on section--dark, only adjust panels */
+.section--dark {
+  .b-contact__form,
+  .b-contact__card {
+    background: rgba(250, 245, 232, 0.06);
+    border-color: rgba(250, 245, 232, 0.14);
+  }
+}

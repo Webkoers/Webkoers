@@ -1,0 +1,22 @@
+@use "base/tokens";
+@use "base/reset";
+@use "base/typography";
+@use "base/layout";
+@use "base/breakpoints";
+@use "base/utilities";
+
+/* components (leeg of minimaal nu) */
+@use "components/buttons";
+@use "components/forms";
+@use "components/header";
+@use "components/footer";
+
+
+/* blocks */
+@use "blocks/over-mij";
+@use "blocks/portfolio";
+@use "blocks/contact";
+@use "blocks/stack-marquee";
+@use "blocks/social-proof";
+@use "blocks/hishaam";
+@use "blocks/preloader";

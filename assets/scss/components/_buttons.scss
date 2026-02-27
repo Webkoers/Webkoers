@@ -1,0 +1,78 @@
+@use "../base/breakpoints" as bp;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 3px;
+  }
+}
+
+/* ========== PRIMARY ========== */
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-text-light);
+
+  &:hover {
+    background: color-mix(in srgb, var(--c-accent), #000 10%);
+  }
+}
+
+/* ========== SECONDARY ========== */
+.btn--secondary {
+  background: transparent;
+  color: var(--c-accent);
+  border-color: color-mix(in srgb, var(--c-accent), transparent 65%);
+
+  &:hover {
+    background: color-mix(in srgb, var(--c-accent), transparent 92%);
+    border-color: var(--c-accent);
+  }
+}
+
+/* ========== SIZE VARIANTS ========== */
+.btn--sm {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+/* ========== DARK CONTEXT SUPPORT (GENERIC) ========== */
+/* Gebruik .section--dark (bestaand) of .is-dark als generieke context */
+.section--dark,
+.is-dark {
+  .btn--secondary {
+    color: var(--c-text-light);
+    border-color: color-mix(in srgb, var(--c-text-light), transparent 65%);
+
+    &:hover {
+      background: color-mix(in srgb, var(--c-text-light), transparent 92%);
+      border-color: var(--c-text-light);
+    }
+  }
+}

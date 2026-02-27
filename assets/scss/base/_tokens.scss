@@ -1,0 +1,42 @@
+:root {
+  /* Colors */
+  --c-bg: #FAF5E8;
+  --c-surface: #333333;
+  --c-accent: #D45500;
+  --c-heading: #E8724A;
+  --c-text: #1f1f1f;
+  --c-text-light: #FAF5E8;
+
+  /* Font */
+  --font-base: "Gilroy", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 72px;
+
+  /* Layout */
+  --container: 1140px;
+  --gutter: 24px;
+
+  /* UI */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 6px 24px rgba(0,0,0,.08);
+}
+
+/* assets/scss/base/_tokens.scss */
+/* Typography tokens */
+
+:root {
+  --font-base: "Gilroy", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}

@@ -1,0 +1,103 @@
+@use "../base/breakpoints" as bp;
+
+.b-over-mij__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+/* Content */
+.b-over-mij__content {
+  max-width: 60ch;
+  color: var(--c-text); /* force readable text in light context */
+}
+
+.b-over-mij__kicker {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.b-over-mij__title {
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.b-over-mij__text {
+  margin: 0 0 var(--space-4);
+  color: var(--c-text);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.b-over-mij__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Media */
+.b-over-mij__media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.b-over-mij__figure {
+  width: min(520px, 100%);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ensure every image fits the mask */
+.b-over-mij__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Layout control */
+.b-over-mij--media-left {
+  .b-over-mij__media {
+    order: -1;
+    justify-content: flex-start;
+  }
+}
+
+/* Responsive */
+@media (min-width: bp.$lg) {
+  .b-over-mij__inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-6);
+  }
+}
+
+/* Dark mode: target the SAME element (fixes specificity bug) */
+.b-over-mij.section--dark {
+  .b-over-mij__content {
+    color: var(--c-text-light);
+  }
+
+  .b-over-mij__kicker {
+    color: var(--c-text-light);
+  }
+
+  .b-over-mij__title {
+    color: var(--c-text-light);
+  }
+
+  .b-over-mij__text {
+    color: color-mix(in srgb, var(--c-text-light), transparent 15%);
+  }
+}
+
+.h1 {
+  color:aqua;
+}
